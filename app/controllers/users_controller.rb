@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     user.email.downcase!
 
-  if @user.save
+  if user.save
       redirect_to :root
     else
       render :new
