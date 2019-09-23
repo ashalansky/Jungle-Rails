@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 
   def create
       user = User.new(user_params)
-      user.email.downcase!
       if user.save
+        session[:user_id] = user.id
         redirect_to :root
       else
         render :new
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :name, 
-      :email, 
+      :email.downcase, 
       :password, 
       :password_confirmation
       )

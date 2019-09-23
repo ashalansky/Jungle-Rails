@@ -36,4 +36,16 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include "Password is too short (minimum is 3 characters)"
     end
   end
+
+  describe '.authenticate_with_credentials' do
+    before(:each) do
+      @user = User.new(name: "Amanda", email: "hello@gmail.com", password: "test", password_confirmation: "test")
+    end
+    
+    it "should be no spaces" do
+      @user.email = " hello@gmail.com "
+      @user.valid?
+      expect(@user.errors.full_messages).to include ("Email must contain no spaces")
+    end
+  end
 end
