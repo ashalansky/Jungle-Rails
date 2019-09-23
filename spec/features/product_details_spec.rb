@@ -23,9 +23,8 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     body.find('header a').click
     sleep 5
 
-
     # DEBUG
-    save_screenshot
+    #save_screenshot
 
     # VERIFY
     #puts page.html
