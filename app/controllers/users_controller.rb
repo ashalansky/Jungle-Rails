@@ -4,16 +4,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    user.email.downcase!
-
-  if user.save
-      redirect_to :root
-    else
-      render :new
-    end
+      user = User.new(user_params)
+      user.email.downcase!
+      if user.save
+        redirect_to :root
+      else
+        render :new
+      end
   end
-
+  
   private
 
   def user_params
