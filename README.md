@@ -2,6 +2,7 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+!["screenshot of main page"](https://github.com/ashalansky/Jungle-Rails/blob/master/docs/main.png)
 
 
 
